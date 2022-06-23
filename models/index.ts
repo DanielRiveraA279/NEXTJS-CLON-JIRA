@@ -1,0 +1,1 @@
+export {default as Entry, type IEntry} from './Entry'; //el type para indicar que estamos exportando un vacio solo es una estructura
