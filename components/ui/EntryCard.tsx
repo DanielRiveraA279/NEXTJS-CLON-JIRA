@@ -27,7 +27,7 @@ export const EntryCard: FC<Props> = ({ entry }) => {
         <Card
             sx={{ marginBottom: 1 }}
             //Eventos de drag and drop
-            draggable={true}
+            draggable
             onDragStart={onDragStart}
             onDragEnd={onDragEnd}
         >

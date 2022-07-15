@@ -18,13 +18,14 @@ export const EntryList: FC<Props> = ({ status }) => {
     const entriesByStatus = useMemo(() => entries.filter(entry => entry.status === status), [entries]) //memorizar valores cuando las entries cambien
 
     //TODO: cuando se suelta la card en la columna
-    const allowDrop = (event: DragEvent) => {
+    const allowDrop = (event: DragEvent<HTMLDivElement>) => {
         event.preventDefault();
     }
 
     //TODO: cuando entra en la nueva columna la card al hacer drag
-    const onDropEntry = (event: DragEvent) => {
+    const onDropEntry = (event: DragEvent<HTMLDivElement>) => {
         const id = event.dataTransfer.getData('text')
+
         const entry = entries.find(entry => entry._id === id)!; //signo es que siempre va a encontrar un elemento
         entry.status = status; //cambiamos status para que se quede al hacer drop
         updateEntry(entry);

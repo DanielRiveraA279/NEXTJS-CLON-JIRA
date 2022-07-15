@@ -1,5 +1,6 @@
 import { ChangeEvent, useContext, useState } from 'react'
 import { Button, TextField } from '@mui/material'
+
 import { SaveOutlined, AddCircleOutline } from '@mui/icons-material'
 import { Box } from '@mui/system'
 import { EntriesContext } from '../../context/entries'
@@ -45,8 +46,8 @@ export const NewEntry = () => {
                                 marginBottom: 1
                             }}
                             placeholder='Nueva entrada'
-                            autoFocus={true}
-                            multiline={true}
+                            autoFocus
+                            multiline
                             label='Nueva entrada'
                             helperText={inputValue.length <= 0 && touched && 'Ingrese un valor'}
                             error={inputValue.length <= 0 && touched} //que este vacio y que se halla enfocado el cursor en la caja
